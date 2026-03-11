@@ -1,0 +1,186 @@
+/* ====== Base styles ====== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffd5b9;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+header {
+  background: #ff7ebc;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+}
+
+nav {
+  margin: 1em 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+  font-weight: bold;
+  transition: color 0.2s;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+  color: #ff7ebc;
+}
+
+.page-content {
+  padding: 1.5rem;
+}
+
+h1 {
+  color: #ff7ebc;
+}
+
+p {
+  color: #ff7ebc;
+}
+
+.color-button {
+  background-color: #ff7ebc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: fixed;   /* We control its exact position with top/left in JS */
+}
+
+/* ====== Navigation bar ====== */
+
+/* Wrapper so we can give the header a background and shadow */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex container: brand on the left, links on the right (on wide screens) */
+.navbar {
+  max-width: 960px;       /* Limit width on very large screens */
+  margin: 0 auto;         /* Center horizontally */
+  padding: 0.75rem 1rem;  /* Space inside the bar */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand / logo link */
+.navbar__brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #ff7ebc;
+}
+
+/* The list that holds the navigation links */
+.navbar__links {
+  list-style: none;  /* Remove default bullets */
+  display: flex;
+  gap: 1.5rem;       /* Space between each link */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar__links a:hover {
+  color: #ff7ebc;
+}
+
+/* ====== Hamburger button (mobile) ====== */
+
+/* Basic button reset + layout */
+.navbar__toggle {
+  display: none;           /* Hidden on wide screens, shown via media query */
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+
+  /* Flex properties will only be active when display is changed to flex in the media query */
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;                /* Space between the lines */
+}
+
+/* Three lines of the hamburger icon */
+.navbar__toggle span {
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 999px;    /* Make the edges round */
+}
+
+/* ====== Responsive behavior ====== */
+
+/* On small screens, we:
+   - turn the navbar into a column
+   - hide the links by default
+   - show the hamburger button
+*/
+@media (max-width: 600px) {
+  .navbar {
+    align-items: center;
+  }
+
+  /* Show the hamburger icon on small screens */
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* Stack brand + toggle + menu vertically */
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  /* Hide the menu by default on small screens */
+  .navbar__links {
+    width: 100%;
+    flex-direction: column;    /* Stack links vertically */
+    gap: 0;                    /* Reset gap; we’ll use padding instead */
+    display: none;             /* Hidden until user taps hamburger */
+    margin-top: 0.5rem;
+  }
+
+  .navbar__links li {
+    border-top: 1px solid #eee;
+  }
+
+  .navbar__links a {
+    display: block;
+    padding: 0.75rem 0;
+  }
+
+  /* When we add the "navbar__links--open" class via JavaScript,
+     the menu becomes visible. */
+  .navbar__links.navbar__links--open {
+    display: flex;
+  }
+}
