@@ -56,4 +56,25 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("navbar__links--open");
     });
   }
+  // Accordion functionality for funding page
+  // Accordion functionality for funding page
+  const accordions = document.querySelectorAll('.accordion');
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('click', function () {
+      // Close all panels except the one clicked
+      accordions.forEach((other, idx) => {
+        if (other !== this) {
+          other.classList.remove('active');
+          const otherPanel = other.nextElementSibling;
+          if (otherPanel) otherPanel.classList.remove('show');
+        }
+      });
+      // Toggle this panel
+      this.classList.toggle('active');
+      const panel = this.nextElementSibling;
+      if (panel) {
+        panel.classList.toggle('show');
+      }
+    });
+  });
 });

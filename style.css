@@ -1,3 +1,76 @@
+/* ====== Accordion Styles ====== */
+.accordion {
+  background-color: #ff7ebc;
+  color: #fff;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1.5em;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.2s;
+}
+
+.accordion:hover, .accordion.active {
+  background-color: #ffd700;
+  color: #ff7ebc;
+}
+
+.accordion-panel {
+  padding: 0 1.5em 1.5em 1.5em;
+  background: #ffe6f2;
+  display: none;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1em;
+}
+
+.accordion-panel.show {
+  display: block;
+}
+/* ====== Tipps Grid Styling ====== */
+.tipps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  list-style: none;
+  padding: 0;
+  margin-top: 1em;
+}
+
+.tipps-grid li {
+  background: #ffe6f2;
+  border-radius: 12px;
+  padding: 1.2em 1em;
+  color: #444;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px rgba(255,126,188,0.07);
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+  transition: box-shadow 0.2s;
+}
+
+.tipps-grid li:hover {
+  box-shadow: 0 4px 16px rgba(255,126,188,0.15);
+}
+/* ====== Starting Up! Banner ====== */
+.startup-banner {
+  background: #ff7ebc;
+  color: #fff;
+  text-align: center;
+  padding: 0.7em 0;
+  font-size: 4em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  z-index: 10;
+}
 /* ====== Base styles ====== */
 
 body {
@@ -6,6 +79,7 @@ body {
   background: #ffd5b9;
   font-family: Arial, sans-serif;
   color: #222;
+  font-size: 22px; /* Increased base font size */
 }
 
 header {
@@ -33,7 +107,7 @@ nav a:hover {
 }
 
 main {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 2em auto;
   background: #fff;
   padding: 2em;
@@ -43,6 +117,7 @@ main {
 
 h1, h2 {
   color: #ff7ebc;
+  font-size: 2.5em; /* Larger headings */
 }
 
 .page-content {
@@ -51,10 +126,12 @@ h1, h2 {
 
 h1 {
   color: #ff7ebc;
+  font-size: 3em; /* Even larger for main heading */
 }
 
 p {
   color: #ff7ebc;
+  font-size: 1.35em; /* Larger paragraph text */
 }
 
 .color-button {
