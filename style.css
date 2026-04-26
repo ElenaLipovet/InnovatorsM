@@ -1,3 +1,12 @@
+/* ====== Custom Styles for Accordions (Funding Page) ====== */
+.pink-title {
+  color: #ff7ebc !important;
+}
+
+.small-black {
+  color: #222 !important;
+  font-size: 1em !important;
+}
 /* ====== Accordion Styles ====== */
 .accordion {
   background-color: #ff7ebc;
@@ -20,16 +29,21 @@
   color: #ff7ebc;
 }
 
+
 .accordion-panel {
-  padding: 0 1.5em 1.5em 1.5em;
+  padding: 1.5em 1.5em 0.5em 1.5em; /* Add more space above text */
   background: #ffe6f2;
   display: none;
   border-radius: 0 0 8px 8px;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
 }
 
 .accordion-panel.show {
   display: block;
+}
+/* Remove bold from h3 in accordion answers */
+.accordion-panel h3 {
+  font-weight: normal;
 }
 /* ====== Tipps Grid Styling ====== */
 .tipps-grid {
